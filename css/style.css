@@ -1,0 +1,105 @@
+/*ALL*/
+p, h1, h2, button, input, li {
+    font-family:  Open-Sans-Extrabold, sans-serif;  
+}
+/*HEADER*/
+header {
+    padding: 30px 0px;   
+    background-color: aqua;
+}
+header h1 {
+    margin-left: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+header p {
+    margin-left: 15px;
+    font-size: 15px;    
+    font-weight: bold;
+}
+#back-to-login, #back-to-register {
+    padding: 5px 8px;
+    margin-left: 15px;    
+    background-color: red;
+    border-radius: 5px;
+}
+#back-to-login a, #back-to-register a {
+    text-decoration: none;
+}
+#back-to-login:hover, #back-to-register:hover {    
+    background-color: yellow;    
+}
+/*MAIN BODY*/
+form {    
+    padding: 20px 0px 70px 0px;
+    background-color:antiquewhite;    
+}
+.field-container {
+    display:flex;
+    flex-direction: column;
+    margin: 10px 0px 30px 15px;
+}
+.field-container input {
+    width: 300px;
+    border-radius: 3px;
+}
+#reset-fields-button, #submit-button, #login-button {
+    display: block;
+    padding: 5px 8px;
+    margin: 15px 0px 5px 15px;   
+    background-color: red;
+    border-radius: 5px;
+}
+#submit-button {
+    padding: 5px 25px;
+}
+#reset-fields-button a, #submit-button a, #login-button a {
+    text-decoration: none;
+}
+#reset-fields-button:hover, #submit-button:hover, #login-button:hover {
+    background-color: yellow;
+}
+/*ERROR LOGS*/
+.hidden {
+    display: none;
+}
+#error-log-container {    
+    background-color: aqua;
+    padding: 10px 0px;
+}
+.error-message, .error-message-shown {
+    font-weight: bold;
+    color: red;
+}
+#error-log-container h2 {
+    margin-left: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    color: brown;
+}
+#error-log-container li {
+    margin-left: -20px;
+    list-style-type: none;
+}
+#error-log-cleaner {
+    margin-left: 20px;
+    border-top: solid 3px green;
+}
+#error-log-cleaner a {    
+    text-decoration: none;
+    font-weight: bold;
+}
+#error-log-cleaner a:hover {    
+    text-decoration: underline;
+    
+}
+/*FOOTER*/
+footer  {
+    padding: 20px 0px 90px 0px;
+    background-color: brown;
+}
+footer p {
+    margin-top: 90px;    
+    margin-left: 15px;
+    color: aliceblue;
+}
