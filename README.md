@@ -8,8 +8,10 @@ Reintalled node.js to test the backend. Included all files of front and backend 
 ---
 
 ## STEPS for installing dependencies
-npm install @wdio/cli|
+npm install @wdio/cli
+
 npx wdio config (local machine, Jasmine, sync, crhomedriver)
+
 npm install @wdio/sync 
 
 ---
@@ -20,8 +22,11 @@ npx wdio run ./wdio.conf.js
 ---
 
 ## GIT PAGES
-https://seba20sa.github.io/QA-week-14/public/register.html 
-https://seba20sa.github.io/QA-week-14/public/login.html 
+https://seba20sa.github.io/QA-week-14/public/register.html
+
+https://seba20sa.github.io/QA-week-14/public/login.html
+
+---
 
 
 © Sebastian Sileoni seba20sa@gmail.com
