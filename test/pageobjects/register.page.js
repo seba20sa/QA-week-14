@@ -64,16 +64,22 @@ class ResiterPage {
 
     backToLogin () {
         this.btnLogin.click();
-      }
-    
-      login(name, email, firstPassword, secondPassword) {
-
-        this.inputName.setValue(name);
-        this.inputEmail.setValue(email);
-        this.inputFirstPassword.setValue(firstPassword);
-        this.inputSecondPassword.setValue(secondPassword);
-        this.btnSubmit.click();
     }
+
+    cleanForm () {
+      this.btnReset.click();
+    }
+
+
+    
+    login(name, email, firstPassword, secondPassword) {
+
+      this.inputName.setValue(name);
+      this.inputEmail.setValue(email);
+      this.inputFirstPassword.setValue(firstPassword);
+      this.inputSecondPassword.setValue(secondPassword);
+      this.btnSubmit.click();
+  }
     
 }
 
