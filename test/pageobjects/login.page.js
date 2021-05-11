@@ -14,7 +14,7 @@ class LoginPage {
     // get inputEmail() {
     //   return $('input[id="formLoginEmail"]');
     // }
-    get inputEmail () { return $('#form-login-emaill') }
+    get inputEmail () { return $('#form-login-email') }
     /*selector for password field*/
     // get inputPassword () {
     //   return $('input[id="formLoginPassword"]');
