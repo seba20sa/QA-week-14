@@ -20,12 +20,12 @@ class LoginPage {
   }
 
   /*selector for the Register button*/
-  get btnRegister {
+  get btnRegister () {
     return $('button[id="backToRegister"]');
   }
 
-  /*selector for login button*/
-  get btnLogin {
+  /*selector for login submit button*/
+  get btnSubmit () {
     return $('button[id="loginButton"]');
   }
 
@@ -34,6 +34,17 @@ class LoginPage {
   //   return $('input[id="cleanFormLink"]');
   // }
 
+  /* methods */
+
+    buttonRegister () {
+      this.btnRegister.click();
+    }
+  
+    login(email, password) {
+      this.inputEmail.setValue(email);
+      this.inputPassword.setValue(password);
+      this.btnSubmit.click();
+  }
 
 
 
