@@ -3,10 +3,10 @@ class ResiterPage {
   
 
   /*LABELS*/
-  get labelFullName () { return $$('label')[0] }
+  get labelName () { return $$('label')[0] }
   get labelEmail () { return $$('label')[1] }
-  get labelPassword () { return $$('label')[2] }
-  get labelConfirmPass () { return $$('label')[3] }
+  get labelFirstPassword () { return $$('label')[2] }
+  get labelSecondPassword () { return $$('label')[3] }
 
 
   /*selector for name field*/
