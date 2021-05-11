@@ -40,7 +40,7 @@ class LoginPage {
       this.btnRegister.click();
     }
   
-    login(email, password) {
+    testLogin(email, password) {
       this.inputEmail.setValue(email);
       this.inputPassword.setValue(password);
       this.btnSubmit.click();
