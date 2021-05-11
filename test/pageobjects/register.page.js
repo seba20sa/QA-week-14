@@ -1,84 +1,103 @@
 class ResiterPage {
+  /*GETTERS*/
   /*selector for name field*/
   get inputName () {
     return $('input[id="formRegisterName"]');
   }
-
   /*selector for email field*/
   get inputEmail () {
     return $('input[id="formRegisterEmail"]');
-  } 
-
+  }
     /*selector for create password  field*/
   get inputFirstPassword () {
     return $('input[id="formRegisterFirstPassword"]');
   }
 
-    /*selector for confirm password  field*/
-    get inputSecondPassword () {
-        return $('input[id="formRegisterSecondPassword"]');
-    }
+  /*selector for confirm password  field*/
+  get inputSecondPassword () {
+      return $('input[id="formRegisterSecondPassword"]');
+  }
 
-    /*selector for the Name  error*/
-    get errorName () {
-        return $('div[id="registerErrorName"]');
-    }
+  /*selector for the Name  error*/
+  get errorName () {
+      return $('div[id="registerErrorName"]');
+  }
 
-    /*selector for the Email  error*/
-    get errorEmail () {
-        return $('div[id="registerErrorEmail"]');
-    }
+  /*selector for the Email  error*/
+  get errorEmail () {
+      return $('div[id="registerErrorEmail"]');
+  }
 
-    /*selector for the First Password  error*/
-    get errorFirstPassword () {
-        return $('div[id="registerErrorFirstPassword"]');
-    }
+  /*selector for the First Password  error*/
+  get errorFirstPassword () {
+      return $('div[id="registerErrorFirstPassword"]');
+  }
 
-    /*selector for the Second Password  error*/
-    get errorSecondPassword () {
-        return $('div[id="registerErrorSecondPassword"]');
-    }
-
-
-    /*selector for the back to login button*/
-    get btnLogin  () {
-        return $('button[id="backToLogin"]');
-    }
-
-    /*selector for the Back to login button*/
-    get btnLogin  () {
-        return $('button[id="backToLogin"]');
-    }
-
-    /*selector for the Reset fields  button*/
-    get btnReset  () {
-        return $('button[id="resetFieldsButton"]');
-    }
-
-    /*selector for the Submit button*/
-    get btnSubmit  () {
-        return $('button[id="submitButton"]');
-    }
-
-    /*methods*/
-
-    backToLogin () {
-        this.btnLogin.click();
-    }
-
-    cleanForm () {
-      this.btnReset.click();
-    }
+  /*selector for the Second Password  error*/
+  get errorSecondPassword () {
+      return $('div[id="registerErrorSecondPassword"]');
+  }
 
 
-    
-    testRegister(name, email, firstPassword, secondPassword) {
+  /*selector for the back to login button*/
+  get btnLogin  () {
+      return $('button[id="backToLogin"]');
+  }
 
-      this.inputName.setValue(name);
-      this.inputEmail.setValue(email);
-      this.inputFirstPassword.setValue(firstPassword);
-      this.inputSecondPassword.setValue(secondPassword);
-      this.btnSubmit.click();
+  /*selector for the Back to login button*/
+  get btnLogin  () {
+      return $('button[id="backToLogin"]');
+  }
+
+  /*selector for the Reset fields  button*/
+  get btnReset  () {
+      return $('button[id="resetFieldsButton"]');
+  }
+
+  /*selector for the Submit button*/
+  get btnSubmit  () {
+      return $('button[id="submitButton"]');
+  }
+
+  /*SETTERS*/
+  setName(name) {
+    this.inputName.setValue(name);
+    browser.keys('Tab');
+  }
+  setEmail (email) {
+    this.inputEmail.setValue(email);
+    browser.keys('Tab');
+  }
+  setFirstPassword (firstPassword) {
+    this.inputFirstPassword.setValue(firstPassword);
+    browser.keys('Tab');
+  }
+  setSecondPassword (secondPassword) {
+    this.inputSecondPassword.setValue(secondPassword);
+    browser.keys('Tab');
+  }
+
+  /*methods*/
+
+  backToLogin () {
+      this.btnLogin.click();
+  }
+
+  cleanForm () {
+    this.btnReset.click();
+  }
+
+  
+
+
+  
+  testRegister(name, email, firstPassword, secondPassword) {
+
+    this.setName(name);
+    this.setEmail (email);
+    this.setFirstPassword (firstPassword);
+    this.setSecondPassword (secondPassword);
+    this.btnSubmit.click();
   }
     
 }
