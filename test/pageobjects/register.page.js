@@ -72,7 +72,7 @@ class ResiterPage {
 
 
     
-    login(name, email, firstPassword, secondPassword) {
+    testRegister(name, email, firstPassword, secondPassword) {
 
       this.inputName.setValue(name);
       this.inputEmail.setValue(email);
