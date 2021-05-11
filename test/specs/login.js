@@ -5,82 +5,71 @@ describe ('login section with two input fields and two buttons',  () => {
     const urlLogin = 'http://seba20sa.github.io/QA-week-14/public/login.html';  
     const urlRegister = 'https://seba20sa.github.io/QA-week-14/public/register.html';
 
-    beforeAll("Open browser", () => {
+    beforeAll("Open browser on the tested page", () => {
         browser.url(urlLogin);
       });
 
     describe ('Email field and password testing', () => {
 
-        it('empty email', () => {
-            
-            LoginPage.testLogin('', 'abc123456')
-            expect(LoginPage.errorEmail).toBe('E-mail must have a valid format');
+        it('empty email', () => {            
+            LoginPage.setEmail()            
+            expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");
             browser.pause(2000);
         });
-        it('wrongly formated email only @', () => {
-            
-            LoginPage.testLogin('@', 'abc123456')
-            expect(LoginPage.errorEmail).toBe('E-mail must have a valid format');
+        it('wrongly formated email only @', () => {            
+            LoginPage.setEmail('@')
+            expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");
             browser.pause(2000);
         });
-
         it('wrongly formated email no @', () => {
             
-            LoginPage.testLogin('seba20sagmail.com', 'abc123456')
-            expect(LoginPage.errorEmail).toBe('E-mail must have a valid format');
+            LoginPage.setEmail('seba20sagmail.com')
+            expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");
             browser.pause(2000);
         });
-
-        it('wrongly formated email no .com', () => {
-            
-            LoginPage.testLogin('seba20sa@gmail', 'abc123456')
-            expect(LoginPage.errorEmail).toBe('E-mail must have a valid format');
+        it('wrongly formated email no .com', () => {            
+            LoginPage.setEmail('seba20sa@gmail')
+            expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");
             browser.pause(2000);
         });
-
-        it('empty password', () => {
-            
-            LoginPage.testLogin('seba20sa@gmail.com', '')
-            expect(LoginPage.errorPassword).toBe('Password must have the correct format');
+        it('empty password', () => {            
+            LoginPage.setPassword()            
+            expect(LoginPage.errorPassword).toHaveText("Password must have the correct format");
             browser.pause(2000);
         });
-
-        it('wrongly formated password less than 8 characters', () => {
-            
-            LoginPage.testLogin('seba20sa@gmail.com', 'abc123')
-            expect(LoginPage.errorPassword).toBe('Password must have the correct format');
+        it('wrongly formated password less than 8 characters', () => {            
+            LoginPage.setPassword('abc123')
+            expect(LoginPage.errorPassword).toHaveText("Password must have the correct format");
             browser.pause(2000);
         });
-
-        it('wrongly formated password no numbers just letters', () => {
-            
-            LoginPage.testLogin('seba20sa@gmail.com', 'abcabcabcabcabc')
-            expect(LoginPage.errorPassword).toBe('Password must have the correct format');
+        it('wrongly formated password no numbers just letters', () => {            
+            LoginPage.setPassword('abcabcabcabcabc')
+            expect(LoginPage.errorPassword).toHaveText("Password must have the correct format");
             browser.pause(2000);
         });
         
-        it('empty email  and password', () => {
+        // it('empty email  and password', () => {
             
-            LoginPage.testLogin('', '')
-            expect(LoginPage.errorEmail).toBe('E-mail must have a valid format');
-            expect(LoginPage.errorPassword).toBe('Password must have the correct format');
-            browser.pause(2000);
-        });
+        //     LoginPage.testLogin('', '')
+        //     expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");
+        //     expect(LoginPage.errorPassword).toHaveText("Password must have the correct format");
+        //     browser.pause(2000);
+        // });
 
-        it('wrongly formated email and password', () => {
+        // it('wrongly formated email and password', () => {
             
-            LoginPage.testLogin('seba20sagmail.com', 'abc')
-            expect(LoginPage.errorEmail).toBe('E-mail must have a valid format');
-            expect(LoginPage.errorPassword).toBe('Password must have the correct format');
-            browser.pause(2000);
-        });        
+        //     LoginPage.testLogin('seba20sagmail.com', 'abc')
+        //     expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");
+        //     expect(LoginPage.errorPassword).toHaveText("Password must have the correct format");
+        //     browser.pause(2000);
+        // });        
         
-        it('Valid credentials', () => {
+        // it('Valid credentials', () => {
             
-            LoginPage.testLogin('seba20sa@gmail.com', 'abc123456')
-            expect(LoginPage.errorEmail).toBe('');
-            browser.pause(2000);
-        });
+        //     LoginPage.testLogin('seba20sa@gmail.com', 'abc123456')
+        //     expect(LoginPage.errorEmail).toBe('');
+        //     browser.pause(2000);
+        // });
 
         // it('Testing the register button and the target url', () => {
         //     LoginPage.buttonRegister();
