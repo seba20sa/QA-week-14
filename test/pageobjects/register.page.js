@@ -1,82 +1,32 @@
 class RegisterPage {
   /*GETTERS*/
-  
-
   /*LABELS*/
   get labelName () { return $$('label')[0] }
   get labelEmail () { return $$('label')[1] }
   get labelFirstPassword () { return $$('label')[2] }
   get labelSecondPassword () { return $$('label')[3] }
-
-
-  /*selector for name field*/
-  // get inputName () {
-  //   return $('input[id="formRegisterName"]');
-  // }
+  /*selector for name field*/ 
   get inputName () { return $('#form-register-name') }
   /*selector for email field*/
-  // get inputEmail () {
-  //   return $('input[id="formRegisterEmail"]');
-  // }
-  get inputEmail () { return $('#form-register-email') }
-    /*selector for create password  field*/
-  // get inputFirstPassword () {
-  //   return $('input[id="formRegisterFirstPassword"]');
-  // }
+   get inputEmail () { return $('#form-register-email') }
+  /*selector for create password  field*/
   get inputFirstPassword () { return $('#form-register-first-password') }
-
   /*selector for confirm password  field*/
-  // get inputSecondPassword () {
-  //     return $('input[id="formRegisterSecondPassword"]');
-  // }
   get inputSecondPassword () { return $('#form-register-second-password') }
-
-  /*selector for the Name  error*/
-  // get errorName () {
-  //     return $('div[id="registerErrorName"]');
-  // }
+  /*selector for the Name  error*/  
   get errorName () { return $('#register-error-name') }
-
-  /*selector for the Email  error*/
-  // get errorEmail () {
-  //     return $('div[id="registerErrorEmail"]');
-  // }
+  /*selector for the Email  error*/  
   get errorEmail () { return $('#register-error-email') }
-
-  /*selector for the First Password  error*/
-  // get errorFirstPassword () {
-  //     return $('div[id="registerErrorFirstPassword"]');
-  // }
+  /*selector for the First Password  error*/  
   get errorFirstPassword () { return $('#register-error-first-password') }
-
-  /*selector for the Second Password  error*/
-  // get errorSecondPassword () {
-  //     return $('div[id="registerErrorSecondPassword"]');
-  // }
+  /*selector for the Second Password  error*/  
   get errorSecondPassword () { return $('#register-error-second-password') }
-
-
-  /*selector for the back to login button*/
-  // get btnLogin  () {
-  //     return $('button[id="backToLogin"]');
-  // }
+  /*selector for the back to login button*/  
   get btnLogin () { return $('#back-to-login') }
-  
-
-  /*selector for the Reset fields  button*/
-  // get btnReset  () {
-  //     return $('button[id="resetFieldsButton"]');
-  // }
+  /*selector for the Reset fields  button*/  
   get btnReset () { return $('#reset-fields-button') }
-
-  /*selector for the Submit button*/
-  // get btnSubmit  () {
-  //     return $('button[id="submitButton"]');
-  // }
+  /*selector for the Submit button*/  
   get btnSubmit () { return $('#submit-button') }
-
-
-
   /*SETTERS*/
   setName(name) {
     this.inputName.setValue(name);
@@ -94,21 +44,13 @@ class RegisterPage {
     this.inputSecondPassword.setValue(secondPassword);
     browser.keys('Tab');
   }
-
   /*methods*/
-
   backToLogin () {
       this.btnLogin.click();
   }
-
   cleanForm () {
     this.btnReset.click();
-  }
-
-  
-
-
-  
+  }  
   testRegister(name, email, firstPassword, secondPassword) {
 
     this.setName(name);
@@ -116,8 +58,6 @@ class RegisterPage {
     this.setFirstPassword (firstPassword);
     this.setSecondPassword (secondPassword);
     this.btnSubmit.click();
-  }
-    
+  }    
 }
-
 module.exports = new RegisterPage();
