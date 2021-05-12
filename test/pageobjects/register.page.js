@@ -1,4 +1,4 @@
-class ResiterPage {
+class RegisterPage {
   /*GETTERS*/
   
 

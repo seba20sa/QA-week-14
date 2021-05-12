@@ -64,22 +64,22 @@ describe ('register section with four input fields, one link and two buttons',  
         });
         /*SECOND PASSWORD*/
         it('Second password empty', () => {
-            RegisterPage.setFirstPassword();
+            RegisterPage.setSecondPassword();
             expect(RegisterPage.errorSecondPassword).toHaveText("Passwords must have the correct format and match");
             browser.pause(2000);
         });
         it('Second password wrong format: less than 8 characters', () => {
-            RegisterPage.setFirstPassword('abc123');
+            RegisterPage.setSecondPassword('abc123');
             expect(RegisterPage.errorSecondPassword).toHaveText("Passwords must have the correct format and match");
             browser.pause(2000);
         });
         it('Second password wrong format: only letters', () => {
-            RegisterPage.setFirstPassword('abcdefghijk');
+            RegisterPage.setSecondPassword('abcdefghijk');
             expect(RegisterPage.errorSecondPassword).toHaveText("Passwords must have the correct format and match");
             browser.pause(2000);
         });
         it('Second password wrong format: only numbers', () => {
-            RegisterPage.setFirstPassword('123456789');
+            RegisterPage.setSecondtPassword('123456789');
             expect(RegisterPage.errorSecondPassword).toHaveText("Passwords must have the correct format and match");
             browser.pause(2000);
         });
