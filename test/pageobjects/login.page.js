@@ -16,6 +16,8 @@ class LoginPage {
     get btnRegister () { return $('#back-to-register') }    
     /*selector for login submit button*/
     get btnSubmit () { return $('#login-button') }
+    /*list of results*/
+    get listOfResults () { return $('#list-of-results') }  
     /*SETTERS*/
     setEmail (email) {
       this.inputEmail.setValue(email);

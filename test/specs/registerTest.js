@@ -23,6 +23,11 @@ describe ('register section with four input fields, one link and two buttons',  
             expect(RegisterPage.errorName).toHaveText("Name must be at least 6 characters long and have a space");
             browser.pause(2000);
         });
+        it('Name correctly formated', () => {
+            RegisterPage.setName('Sebastian Sileoni');
+            expect(RegisterPage.errorName).toHaveText("");
+            browser.pause(2000);
+        });
         /*MAIL*/
         it('empty mail', () => {
             RegisterPage.setEmail();
@@ -37,6 +42,11 @@ describe ('register section with four input fields, one link and two buttons',  
         it('wrongly formated email no .com', () => {
             RegisterPage.setEmail('seba20sa@gmail');
             expect(RegisterPage.errorEmail).toHaveText("E-mail must have a valid format");
+            browser.pause(2000);
+        });
+        it('corerctly formated email', () => {
+            RegisterPage.setEmail('seba20sa@gmail.com');
+            expect(RegisterPage.errorEmail).toHaveText("");
             browser.pause(2000);
         });
         /*FIRST PASSWORD*/
@@ -60,7 +70,7 @@ describe ('register section with four input fields, one link and two buttons',  
             expect(RegisterPage.errorFirstPassword).toHaveText("Password must have the correct format");
             browser.pause(2000);
         });
-        it('First password valid format', () => {
+        it('First password with a valid format', () => {
             RegisterPage.setFirstPassword('abc123456');
             expect(RegisterPage.errorFirstPassword).toHaveText("");
             browser.pause(2000);

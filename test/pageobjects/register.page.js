@@ -54,7 +54,6 @@ class RegisterPage {
     this.btnReset.click();
   }  
   testRegister(name, email, firstPassword, secondPassword) {
-
     this.setName(name);
     this.setEmail (email);
     this.setFirstPassword (firstPassword);
