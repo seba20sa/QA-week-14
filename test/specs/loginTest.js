@@ -8,9 +8,7 @@ describe ('login section with two input fields and two buttons',  () => {
     beforeAll("Open browser on the tested page", () => {
         browser.url(urlLogin);
       });
-
     describe ('Email field and password testing', () => {
-
         it('empty email', () => {            
             LoginPage.setEmail()            
             expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");

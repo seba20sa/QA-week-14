@@ -3,11 +3,9 @@ describe ('register section with four input fields, one link and two buttons',  
     /*URLs to perform the test*/
     const urlLogin = 'http://seba20sa.github.io/QA-week-14/public/login.html';  
     const urlRegister = 'https://seba20sa.github.io/QA-week-14/public/register.html';
-
     beforeAll("Open browser on register url", () => {
         browser.url(urlRegister);
       });
-
     describe ('Name, Email and both Passwords fields testing', () => {
         /*NAME*/
         it('empty name', () => {
@@ -62,6 +60,11 @@ describe ('register section with four input fields, one link and two buttons',  
             expect(RegisterPage.errorFirstPassword).toHaveText("Password must have the correct format");
             browser.pause(2000);
         });
+        it('First password valid format', () => {
+            RegisterPage.setFirstPassword('abc123456');
+            expect(RegisterPage.errorFirstPassword).toHaveText("");
+            browser.pause(2000);
+        });
         /*SECOND PASSWORD*/
         it('Second password empty', () => {
             RegisterPage.setSecondPassword();
@@ -79,30 +82,48 @@ describe ('register section with four input fields, one link and two buttons',  
             browser.pause(2000);
         });
         it('Second password wrong format: only numbers', () => {
-            RegisterPage.setSecondtPassword('123456789');
+            RegisterPage.setSecondPassword('123456789');
             expect(RegisterPage.errorSecondPassword).toHaveText("Passwords must have the correct format and match");
             browser.pause(2000);
         });
-        // it('Second password correct format but not matching the first password', () => {
-        //     RegisterPage.testRegister('Sebastian Sileoni', 'seba20sa@gmail.com', 'abc123456', 'abc654321');
-        //     expect(RegisterPage.errorSecondPassword).toBe('Passwords must have the correct format and match');
-        //     browser.pause(2000);
-        // });
-        /*ALL VALID*/
-        // it('All fields are correct', () => {
-        //     RegisterPage.testRegister('Sebastian Sileoni', 'seba20sa@gmail.com', 'abc123456', 'abc123456');
-        //     expect(RegisterPage.errorSecondPassword).toBe('');
-        //     browser.pause(2000);
-        // });
-        /*BACK TO LOGIN*/
-
-        // it('Testing the Login button and the target url', () => {
-        //     RegisterPage.backToLogin();
-        //     if (browser.getUrl() === urlLogin);
-        //     else throw new Error('ERROR');
-        //     browser.pause(2000);
-        // });
-        
+        it('Second password correctly formated but not matching the first password', () => {
+            RegisterPage.setSecondPassword('abc654321');
+            expect(RegisterPage.errorSecondPassword).toHaveText("Passwords must have the correct format and match");
+            browser.pause(2000);
+        });
+        it('Second password correctly formated and matching the first password', () => {
+            RegisterPage.setSecondPassword('abc123456');
+            expect(RegisterPage.errorSecondPassword).toHaveText("");
+            browser.pause(2000);
+        });
+        it('After inserting all the valid credentials on all four fields, click the submit'+
+        'button and test if they show on the validations section below', () => {
+            RegisterPage.testRegister('Sebastian Sileoni', 'seba20sa@gmail', 'abc123456', 'abc123456' )
+            expect(RegisterPage.listOfResults).toHaveTextContaining([
+                "Every validation has passed", 
+                "The Name is: sebastian sileoni",
+                "The e-mail is: seba20sa@gmail.com",
+                "The first is: abc123456",
+                "The second password is: abc123456"
+            ]);
+            browser.pause(2000);
+        });
+        it('Press the reset fields button and check if the fields are cleaned up', () => {
+            RegisterPage.btnReset.click();
+            expect(browser.refresh());
+            expect(browser).toHaveUrl(
+                'https://seba20sa.github.io/QA-week-14/public/register.html?name=&email=&first-password=&second-password='
+            );
+            expect(browser).toHaveTitle("REGISTER");
+            browser.pause(2000);
+        });
+        it('Press Back to Login button and check if the URL is correct', () => {
+            RegisterPage.btnLogin.click();
+            expect(browser).toHaveUrl(
+                'https://seba20sa.github.io/QA-week-14/public/login.html'
+            );
+            expect(browser).toHaveTitle("LOGIN");
+            browser.pause(2000);
+        });
     });
-
 });

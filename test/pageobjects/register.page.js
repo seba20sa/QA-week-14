@@ -27,6 +27,8 @@ class RegisterPage {
   get btnReset () { return $('#reset-fields-button') }
   /*selector for the Submit button*/  
   get btnSubmit () { return $('#submit-button') }
+  /*list of results*/
+  get listOfResults () { return $('#list-of-results') }  
   /*SETTERS*/
   setName(name) {
     this.inputName.setValue(name);
