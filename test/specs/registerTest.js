@@ -106,6 +106,7 @@ describe ('register section with four input fields, one link and two buttons',  
             expect(RegisterPage.errorSecondPassword).toHaveText("");
             browser.pause(2000);
         });
+        /*LIST OF RESULTS */
         it('After inserting all the valid credentials on all four fields, click the submit'+
         'button and test if they show on the validations section below', () => {
             RegisterPage.testRegister('Sebastian Sileoni', 'seba20sa@gmail', 'abc123456', 'abc123456' )

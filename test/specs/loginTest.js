@@ -71,8 +71,5 @@ describe ('login section with two input fields and two buttons',  () => {
             expect(browser).toHaveTitle("REGISTER");
             browser.pause(2000);
         });
-        
-
     });
-
 });
