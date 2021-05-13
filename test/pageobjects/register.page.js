@@ -1,6 +1,6 @@
 class RegisterPage {
   /*GETTERS*/
-  /*LABELS*/
+  /*labels*/
   get labelName () { return $$('label')[0] }
   get labelEmail () { return $$('label')[1] }
   get labelFirstPassword () { return $$('label')[2] }
@@ -8,7 +8,7 @@ class RegisterPage {
   /*selector for name field*/ 
   get inputName () { return $('#form-register-name') }
   /*selector for email field*/
-   get inputEmail () { return $('#form-register-email') }
+  get inputEmail () { return $('#form-register-email') }
   /*selector for create password  field*/
   get inputFirstPassword () { return $('#form-register-first-password') }
   /*selector for confirm password  field*/
