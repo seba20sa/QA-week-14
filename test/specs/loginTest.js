@@ -7,7 +7,7 @@ describe ('login section with two input fields and two buttons',  () => {
     beforeAll("Open browser on the tested page", () => {
         browser.url(urlLogin);
       });
-    describe ('Email field and password testing', () => {
+    describe ('Email field testing', () => {
         it('empty email', () => {            
             LoginPage.setEmail()            
             expect(LoginPage.errorEmail).toHaveText("E-mail must have a valid format");
@@ -33,6 +33,8 @@ describe ('login section with two input fields and two buttons',  () => {
             expect(LoginPage.errorEmail).toHaveText("");
             browser.pause(2000);
         });
+    });
+    describe('Password testing', () => {
         it('empty password', () => {            
             LoginPage.setPassword()            
             expect(LoginPage.errorPassword).toHaveText("Password must have the correct format");
@@ -53,7 +55,8 @@ describe ('login section with two input fields and two buttons',  () => {
             expect(LoginPage.errorPassword).toHaveText("");
             browser.pause(2000);
         });
-        /*LIST OF RESULTS */
+    });
+    describe('List of results', () => {
         it('After inserting all the valid credentials on the two fields, click the Login'+
         'button and test if they show on the validations section below', () => {
             LoginPage.testLogin('seba20sa@gmail', 'abc123456')
@@ -63,6 +66,8 @@ describe ('login section with two input fields and two buttons',  () => {
             ]);
             browser.pause(2000);
         });
+    });
+    describe('links and buttons', () => {
         it('Press the Register button and check if the URL is correct', () => {
             LoginPage.btnRegister.click();
             expect(browser).toHaveUrl(

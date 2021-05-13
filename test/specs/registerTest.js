@@ -9,7 +9,7 @@ describe ('register section with four input fields, one link and two buttons',  
     describe ('Name, Email and both Passwords fields testing', () => {
         /*NAME*/
         it('empty name', () => {
-            RegisterPage.setName()            
+            RegisterPage.setName();            
             expect(RegisterPage.errorName).toHaveText("Name must be at least 6 characters long and have a space");
             browser.pause(2000);
         });
@@ -109,7 +109,7 @@ describe ('register section with four input fields, one link and two buttons',  
         /*LIST OF RESULTS */
         it('After inserting all the valid credentials on all four fields, click the submit'+
         'button and test if they show on the validations section below', () => {
-            RegisterPage.testRegister('Sebastian Sileoni', 'seba20sa@gmail', 'abc123456', 'abc123456' )
+            RegisterPage.testRegister('Sebastian Sileoni', 'seba20sa@gmail', 'abc123456', 'abc123456');
             expect(RegisterPage.listOfResults).toHaveTextContaining([
                 "Every validation has passed", 
                 "The Name is: sebastian sileoni",
